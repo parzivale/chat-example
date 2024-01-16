@@ -8,12 +8,12 @@
 	<script>
     const urlParams = new URLSearchParams(window.location.search);
     const authToken = urlParams.get('auth');
-    const me = await fetch("https://xpvx-7rob-ycvq.n7c.xano.io/api:MCjtN2rv/auth/me", {
+    fetch("https://xpvx-7rob-ycvq.n7c.xano.io/api:MCjtN2rv/auth/me", {
         headers:{
             "Authorization": authToken
         }
-    });
-    const UI = JSON.parse(me)["id"];
+    }).then(response => {
+    const UI = JSON.parse(response)["id"];
 	window.addEventListener('DOMContentLoaded', (event) => {
 		CometChatWidget.init({
 			"appID": "248376389500c53a",
@@ -42,7 +42,7 @@
 			console.log("Initialization failed with error:", error);
 			//Check the reason for error and take appropriate action.
 		});
-	});
+	});});
 	</script>
 </body>
 

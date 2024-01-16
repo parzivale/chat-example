@@ -14,6 +14,7 @@
         }
     }).then(response => {
     const UID = response.json()["id"];
+    console.log(UID);
 	window.addEventListener('DOMContentLoaded', (event) => {
 		CometChatWidget.init({
 			"appID": "248376389500c53a",

@@ -14,8 +14,10 @@
             "Authorization": authToken
         }
     }).then(response => {
-        const chatAuth = response.json()["chat_auth"];
-        console.log(response);
+        response.json().then( data => {
+        console.log(data);
+        const chatAuth = data["chat_auth"];
+        console.log(chatAuth);
 		CometChatWidget.init({
 			"appID": "248376389500c53a",
 			"appRegion": "us",
@@ -43,7 +45,7 @@
 			console.log("Initialization failed with error:", error);
 			//Check the reason for error and take appropriate action.
 		});
-    });
+    });});
 	</script>
 </body>
 

@@ -6,6 +6,14 @@
 <body>
 	<div id="cometchat"></div>
 	<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const authToken = urlParams.get('auth');
+    const me = await fetch("https://xpvx-7rob-ycvq.n7c.xano.io/api:MCjtN2rv/auth/me", {
+        headers:{
+            "Authorization": authToken
+        }
+    });
+    const UI = JSON.parse(me)["id"];
 	window.addEventListener('DOMContentLoaded', (event) => {
 		CometChatWidget.init({
 			"appID": "248376389500c53a",
@@ -15,7 +23,7 @@
 			console.log("Initialization completed successfully");
 			//You can now call login function.
 			CometChatWidget.login({
-				"uid": "UID"
+				"uid": UID
 			}).then(response => {
 				CometChatWidget.launch({
 					"widgetID": "cfda0de8-2b9b-42ec-a3ef-ebb846a0e8c7",

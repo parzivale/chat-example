@@ -14,7 +14,7 @@
             "Authorization": authToken
         }
     }).then(response => {
-        const UID = response.json()["id"];
+        const chatAuth = response.json()["chat_auth"];
 		CometChatWidget.init({
 			"appID": "248376389500c53a",
 			"appRegion": "us",
@@ -23,7 +23,7 @@
 			console.log("Initialization completed successfully");
 			//You can now call login function.
 			CometChatWidget.login({
-				"uid": UID
+				"authToken": chatAuth
 			}).then(response => {
 				CometChatWidget.launch({
 					"widgetID": "cfda0de8-2b9b-42ec-a3ef-ebb846a0e8c7",

@@ -14,8 +14,7 @@
             "Authorization": authToken
         }
     }).then(response => {
-    const UID = response.json()["id"];
-	window.addEventListener('DOMContentLoaded', (event) => {
+        const UID = response.json()["id"];
 		CometChatWidget.init({
 			"appID": "248376389500c53a",
 			"appRegion": "us",
@@ -28,7 +27,7 @@
 			}).then(response => {
 				CometChatWidget.launch({
 					"widgetID": "cfda0de8-2b9b-42ec-a3ef-ebb846a0e8c7",
-					"target": "cometchat",
+					"target": "#cometchat",
 					"roundedCorners": "true",
 					"height": "600px",
 					"width": "800px",
@@ -43,7 +42,7 @@
 			console.log("Initialization failed with error:", error);
 			//Check the reason for error and take appropriate action.
 		});
-	});});
+    });
 	</script>
 </body>
 

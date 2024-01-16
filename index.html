@@ -13,7 +13,7 @@
             "Authorization": authToken
         }
     }).then(response => {
-    const UID = JSON.parse(response)["id"];
+    const UID = response.json()["id"];
 	window.addEventListener('DOMContentLoaded', (event) => {
 		CometChatWidget.init({
 			"appID": "248376389500c53a",

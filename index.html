@@ -15,7 +15,7 @@
 	<script>
     const urlParams = new URLSearchParams(window.location.search);
     const authToken = urlParams.get('auth');
-    fetch("https://xpvx-7rob-ycvq.n7c.xano.io/api:MCjtN2rv/auth/me", {
+    fetch("https://x8ki-letl-twmt.n7.xano.io/api:L24nQAqi/auth/me", {
         headers:{
             "Authorization": authToken
         }
@@ -25,9 +25,9 @@
         const chatAuth = data["chat_auth"];
         console.log(chatAuth);
 		CometChatWidget.init({
-			"appID": "248376389500c53a",
+			"appID": "251614abd975e108",
 			"appRegion": "us",
-			"authKey": "fd9e14214c8a005fb3fd82d1fe676bf4e2a9dc2e"
+			"authKey": "c139c1ad4a5d69c87f9618658ccb4e8e725444cc"
 		}).then(response => {
 			console.log("Initialization completed successfully");
 			//You can now call login function.
@@ -35,12 +35,12 @@
 				"authToken": chatAuth
 			}).then(response => {
 				CometChatWidget.launch({
-					"widgetID": "cfda0de8-2b9b-42ec-a3ef-ebb846a0e8c7",
+					"widgetID": "709a2afa-d719-41fa-8d55-54d1b16b210a",
 					"target": "#cometchat",
 					"roundedCorners": "true",
 					"height": "100vh",
 					"width": "100vw",
-					"defaultID": '174', //default UID (user) or GUID (group) to show,
+					"defaultID": '8', //default UID (user) or GUID (group) to show,
 					"defaultType": 'user' //user or group
 				});
 			}, error => {
